@@ -3,7 +3,7 @@ const money = new Intl.NumberFormat("es-PE", {
   currency: "PEN",
 });
 
-export function ProductCard({ product, onEdit, onDelete, deleting = false }) {
+export function ProductCard({ product, onEdit, onDelete, onAddToCart, onDetail, deleting = false }) {
   return (
     <article className="product-card">
       <div className="product-image-wrap">
@@ -31,6 +31,8 @@ export function ProductCard({ product, onEdit, onDelete, deleting = false }) {
         </div>
 
         <div className="product-actions">
+          <button type="button" className="button button-subtle" onClick={() => onDetail(product)}>Ver detalle</button>
+          <button type="button" className="button button-primary" disabled={!product.stock} onClick={() => onAddToCart(product)}>Agregar</button>
           <button type="button" className="button button-subtle" onClick={() => onEdit(product)}>
             Editar
           </button>

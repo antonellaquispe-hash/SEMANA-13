@@ -9,7 +9,7 @@ import { deleteProduct, listProducts } from "../services/productService.js";
  * Página del catálogo: carga por servicio dentro del efecto y muestra los
  * tres estados de la petición (loading / error / success).
  */
-export function CatalogPage({ revision = 0, notice = "", onNavigate, onDismissNotice }) {
+export function CatalogPage({ revision = 0, notice = "", onNavigate, onDismissNotice, onAddToCart }) {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [status, setStatus] = useState("loading");
@@ -164,6 +164,8 @@ export function CatalogPage({ revision = 0, notice = "", onNavigate, onDismissNo
                   deleting={deletingId === product.id}
                   onEdit={(item) => onNavigate({ name: "edit", productId: item.id })}
                   onDelete={handleDelete}
+                  onAddToCart={onAddToCart}
+                  onDetail={(item) => onNavigate({ name: "detail", productId: item.id })}
                 />
               ))}
             </section>

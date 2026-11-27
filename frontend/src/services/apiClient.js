@@ -11,7 +11,7 @@ export const apiClient = axios.create({
 
 // Los recursos del cuestionario siguen usando token; el catálogo es público.
 apiClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem("quizToken");
+  const token = localStorage.getItem("storeToken") || localStorage.getItem("quizToken");
   if (token) config.headers.Authorization = `Token ${token}`;
   return config;
 });
