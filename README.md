@@ -141,3 +141,7 @@ directamente. La dirección base se configura una sola vez en `apiClient.js` med
 `VITE_API_BASE_URL`. El catálogo muestra los tres estados de la petición y filtra por categoría
 usando únicamente las categorías devueltas por el API.
 
+
+## Semana 14 — Ingreso, carrito y pedidos
+
+La extensión implementa ingreso con tokens DRF (`/api/auth/login/`), historial de pedidos por usuario (`/api/orders/`), registro de pedidos y líneas en Django Admin, y pantallas de detalle, carrito persistente, ingreso y mis pedidos. El servidor determina el precio final y descuenta existencias al crear el pedido. Consulta desarrollo y comprobaciones manuales en [`entregable/README.md`](entregable/README.md).

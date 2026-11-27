@@ -37,7 +37,12 @@ MIDDLEWARE = [
 
 # The React development server is the only browser origin allowed to call this
 # API. Keep the scheme, host, and port explicit; an origin has no trailing slash.
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+]
 CORS_ALLOW_CREDENTIALS = False
 
 TEMPLATES = [
